@@ -1,5 +1,3 @@
-import styled from "@emotion/styled/macro";
-
 //!!! 다음 프로젝트에서 바꿀 부분
 //!! 디자인적 분리와 재활용성 => className을 이용한 css로
 //!! 기능적 분리와 재활용성 => emotion styled를 이용한 component 단위의 조각 만들기
@@ -34,6 +32,7 @@ export const colors = {
   purple: "#7027A0",
   gradient: "linear-gradient(to right, #fa9e2c, #8f50fb)",
   gradientAlt: "linear-gradient(to right, #8f50fb, #350a4f)",
+  graidentTransparent: "linear-gradient(to right, rgba(250, 158, 44,0.3), rgba(143, 80, 251,0.5))",
 } as const;
 
 export const fontSizes = {

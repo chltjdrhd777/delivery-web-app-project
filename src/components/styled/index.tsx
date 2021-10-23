@@ -106,13 +106,6 @@ export const B = {
 
       & .hotel-rating {
         margin: 1rem 2rem;
-        & .rating {
-          color: ${({ theme }) => theme.colors.pointColorYello};
-        }
-
-        & .rating:not(:first-of-type) {
-          margin-left: 1rem;
-        }
       }
 
       //!conditional

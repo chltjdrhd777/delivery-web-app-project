@@ -1,6 +1,7 @@
 import styled from "@emotion/styled/macro";
 import { B } from "components/styled";
 import heroBack from "assets/images/hero_background.jpg";
+import OfferImg from "assets/images/the_paradise_bg.jpg";
 
 //# header
 export const Header = styled(B.Header)`
@@ -173,6 +174,45 @@ export const HotelHeading = styled.h5`
     font-family: "Courgette", cursive;
     font-style: oblique;
     color: ${({ theme }) => theme.colors.grayThree};
+  }
+`;
+
+//! Offer //
+export const Offer = styled(B.Section)`
+  background-image: ${({ theme }) => theme.colors.graidentTransparent}, url(${OfferImg});
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const OfferContent = styled.div`
+  background-color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
+
+  & .offer-discount {
+    background-color: ${({ theme }) => theme.colors.pointColorYello};
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: 1px solid ${({ theme }) => theme.colors.indigo};
+    outline-offset: 0.5rem;
+  }
+
+  & p {
+    color: ${({ theme }) => theme.colors.grayThree};
+    font-size: 1.5rem;
+    margin: 2.5rem;
   }
 `;
 

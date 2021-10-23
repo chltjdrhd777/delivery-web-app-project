@@ -4,6 +4,7 @@ import { Hotel, HotelList, HotelHeading } from "components/styled/Home.styled";
 import FeaturedHotelImg from "assets/images/hotel_astro_resort.jpg";
 import GardenImg from "assets/images/hotel_the_enchanted_garden.jpg";
 import ParadiseImg from "assets/images/hotel_the_paradise.jpg";
+import Rating from "components/Home/Rating";
 
 function Hotels() {
   return (
@@ -20,13 +21,7 @@ function Hotels() {
               <img src={FeaturedHotelImg} alt="featured" />
               <h5 className="hotel-name">Astro Hotel</h5>
               <span className="hotel-price">From $200/night</span>
-              <div className="hotel-rating">
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star-half rating"></i>
-              </div>
+              <Rating rating={4.5} className="hotel-rating" />
 
               <B.Button className="gradient ">
                 Book now
@@ -40,13 +35,7 @@ function Hotels() {
               <img src={GardenImg} alt="garden" />
               <h5 className="hotel-name">Enchanted Garden</h5>
               <span className="hotel-price">From $300/night</span>
-              <div className="hotel-rating">
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-              </div>
+              <Rating rating={3.7} className="hotel-rating" />
 
               <B.Button className="gradient">
                 Book now
@@ -60,13 +49,7 @@ function Hotels() {
               <img src={ParadiseImg} alt="paradise" />
               <h5 className="hotel-name">The Paradise</h5>
               <span className="hotel-price">From $350/night</span>
-              <div className="hotel-rating">
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star rating"></i>
-                <i className="fas fa-star-half rating"></i>
-              </div>
+              <Rating rating={5} className="hotel-rating" />
 
               <B.Button className="gradient">
                 Book now
