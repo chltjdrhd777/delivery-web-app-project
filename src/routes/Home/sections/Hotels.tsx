@@ -1,22 +1,20 @@
 import React from "react";
 import { B } from "components/styled";
-import { Hotel, HotelList, HotelHeading } from "components/styled/Home.styled";
+import { Hotel, HotelList, HotelGrid } from "components/styled/Home.styled";
 import FeaturedHotelImg from "assets/images/hotel_astro_resort.jpg";
 import GardenImg from "assets/images/hotel_the_enchanted_garden.jpg";
 import ParadiseImg from "assets/images/hotel_the_paradise.jpg";
 import Rating from "components/Home/Rating";
+import HotelHeading from "components/Home/Heading";
 
 function Hotels() {
   return (
     <Hotel>
       <B.Container>
         <HotelList>
-          <HotelHeading>
-            <span className="heading">Explore</span>
-            <span className="sub-heading">Our beautiful hotels</span>
-          </HotelHeading>
+          <HotelHeading title="explore" subTitle="Our beautiful hotels" className="hotel-heading" />
 
-          <B.Grid>
+          <HotelGrid>
             <div className="grid-item featured-hotels">
               <img src={FeaturedHotelImg} alt="featured" />
               <h5 className="hotel-name">Astro Hotel</h5>
@@ -58,7 +56,7 @@ function Hotels() {
                 </span>
               </B.Button>
             </div>
-          </B.Grid>
+          </HotelGrid>
         </HotelList>
       </B.Container>
     </Hotel>

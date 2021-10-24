@@ -22,8 +22,8 @@ function Rating({ rating, className }: RatingProps) {
 
   return (
     <RatingContainer className={className}>
-      {Array.from({ length: integer }, () => (
-        <i className="fas fa-star rating"></i>
+      {Array.from({ length: integer }, (_, i) => (
+        <i key={i} className="fas fa-star rating"></i>
       ))}
       {decimal >= 0.5 && <i className="fas fa-star-half rating"></i>}
     </RatingContainer>

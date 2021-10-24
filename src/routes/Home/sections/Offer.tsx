@@ -12,10 +12,10 @@ function index() {
           <h5 className="hotel-name">The Paradise</h5>
           <Rating rating={5} className="hotel-rating" />
 
-          <p>
+          <B.P className="offer-p">
             This it great chance to leave your break time. please enjoy another world with us, "The
             Paradise"
-          </p>
+          </B.P>
 
           <B.Button className="gradient">Redeem Offer</B.Button>
         </OfferContent>

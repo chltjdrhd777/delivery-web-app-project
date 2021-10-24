@@ -37,26 +37,41 @@
 
 ---
 
-## design structure
+# design structure
+
+<div align="left">
+<br/>
 
 0. 스타일은 스타일로, 기능은 기능으로 컴포넌트를 구분하여 관심사를 따로둔다
+
 1. styled 폴더의 index에는 웹 전체에서 공용으로 사용될 styled component를 정리하고
+
 2. 디자인적인 변경은 그 내부에서 class를 통해 정의함에 따라 필요에 따라 bootstrap처럼 클래스의 변경만으로 디자인이 유동적으로 변경되게 한다
+
 3. styled 폴더 안에 네이밍이 된 파일들은 각 route를 뜻하며, 해당 내부에는 index의 베이스 컴포넌트를 물려받아 해당 페이지에서 어떤 컴포넌트가 사용되는지를 관리한다.
+
 4. 또한 media query를 내부에 둠으로서, 사용된 컴포넌트들이 미디어쿼리를 통해 조절되도록 만든다.
+
 5. 기능적인 분리는 styled 외부에 따로 정의함으로서, 기능적 재활용을 꿰한다
+
+</div>
 
 ---
 
-### styled refactor principle
+# styled refactor principle
 
-스타일링을 위한 컴포넌트의 분리 기준은
+<<스타일링을 위한 styled 컴포넌트의 분리 기준은>>
 
-1. 자식의 깊이가 1이 남았을 경우, 부모를 의미단위로 분리한다
+<div align="left">
+<br/>
 
-2. 자식의 깊이가 1이상이라도, 만약 클래스를 활용한 스타일링을 할 것이라면(ex .class:nth-of-type(2) 와 같이 클래스로 자식을 모으고 거기에 의사클래스를 쓰고싶다면) 부모를 의미단위로 분리한다
+1. styled폴더 내에, 페이지에 이름을 가진 파일을 형성하고, 그 안에 차례대로 저장한다.(ex, Home.styled.ts). <br/>styled 컴포넌트를 나누는 기준은 큰 구획별로 나눈다 _**(ex/ Main => Container => Nav => NavHeading, NavLists)**_
 
-3. 부모로부터 상태를 전달받아 작동하거나, 아니면 디자인인 아닌 기능에 초점을 두고 기능적인 단위로 따로 분리해야 한다면 styled 폴더가 아닌 외부 폴더에 해당 Route 이름으로 만들어진 폴더 안에다가 따로 작성하여 사용되고있는 출처대로 모아놓는다.
+2. (optional) 만약 특정 컴포넌트의 형태가 계속 반복적으로 재사용된다면, 해당 페이지로 명명한 폴더 내에 component 형태로 모아둔다._**(ex, components/Home)**_<br/> 이때 해당 컴포넌트들을 나중에 mediaQuery로서 styled.ts 파일에서 접근이 가능하도록 클래스를 붙인다.
+</div>
+<br/><br/>
+
+> 한 영역에서만 계속 반복되고 다른 영역에서 쓰이진 않을 것 같다면 그냥 해당 내부에서 클래스명을 지정하여 코딩해도 괜찮다<br/>(routes/Home/sections/Hotels 의 그리드 영역 참조)
 
 ---
 

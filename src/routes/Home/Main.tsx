@@ -3,6 +3,7 @@ import Hero from "./sections/Hero";
 import Booking from "./sections/Booking";
 import Hotel from "./sections/Hotels";
 import Offer from "./sections/Offer";
+import Rooms from "./sections/Rooms";
 
 function HomeMain() {
   return (
@@ -11,6 +12,7 @@ function HomeMain() {
       <Booking />
       <Hotel />
       <Offer />
+      <Rooms />
     </main>
   );
 }
