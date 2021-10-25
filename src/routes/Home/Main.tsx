@@ -4,6 +4,8 @@ import Booking from "./sections/Booking";
 import Hotel from "./sections/Hotels";
 import Offer from "./sections/Offer";
 import Rooms from "./sections/Rooms";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 function HomeMain() {
   return (
@@ -13,6 +15,8 @@ function HomeMain() {
       <Hotel />
       <Offer />
       <Rooms />
+      <Contact />
+      <Footer />
     </main>
   );
 }

@@ -3,7 +3,7 @@ import { B } from "components/styled";
 import heroBack from "assets/images/hero_background.jpg";
 import OfferImg from "assets/images/the_paradise_bg.jpg";
 
-//# header
+//# header ////////////////////////////////////
 export const Header = styled(B.Header)`
   width: 100%;
   height: 6rem;
@@ -73,7 +73,7 @@ export const NavList = styled(B.Ul)<{ menuOpen?: boolean }>`
   }
 `;
 
-//# main
+//# main //////////////////////////////////////
 //! hero //
 export const Hero = styled(B.Section)`
   width: 100%;
@@ -314,6 +314,108 @@ export const RoomsGrid = styled(B.Grid)`
         font-weight: bold;
         margin-left: 1rem;
       }
+    }
+  }
+`;
+
+//! Contact//
+export const Contact = styled(B.Section)``;
+export const ContactContent = styled.div`
+  display: flex;
+  justify-content: center;
+
+  & .contactImg-wrap {
+    display: none;
+  }
+`;
+export const ContactForm = styled(B.Form)`
+  width: 100%;
+  background-image: ${({ theme }) => theme.colors.gradient};
+  padding: 2.5rem;
+
+  & input,
+  & textarea {
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%;
+    min-height: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 1rem;
+    background-color: transparent;
+    resize: none;
+    border-bottom: 2px solid white;
+    ::-webkit-input-placeholder {
+      color: white;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    &:focus + .bar::after {
+      transform: scaleX(1);
+    }
+  }
+
+  & .bar {
+    display: block;
+    position: relative;
+  }
+
+  & .bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: ${({ theme }) => theme.colors.purple};
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transform-origin: left;
+  }
+`;
+
+//# footer ///////////////////////////////////////
+export const Footer = styled(B.Footer)`
+  padding: 2rem 0;
+  background-color: ${({ theme }) => theme.colors.purple};
+  color: white;
+`;
+export const FooterContent = styled.div``;
+export const FooterBrand = styled.div`
+  margin-bottom: 5rem;
+
+  & p {
+    margin-left: 0;
+  }
+`;
+export const FooterSocial = styled.div`
+  & .social-media {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  & .social-media > .sm-link {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid ${({ theme }) => theme.colors.pointColorYello};
+    border-radius: 50%;
+    display: flex;
+    margin-right: 1rem;
+    transition: background-color 0.5s;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.pointColorYello};
+      color: ${({ theme }) => theme.colors.grayFour};
     }
   }
 `;
