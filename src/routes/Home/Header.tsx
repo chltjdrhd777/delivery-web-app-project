@@ -3,12 +3,14 @@ import { Header, Nav, Logo, HambergerMenu, NavList } from "components/styled/Hom
 import { B } from "components/styled";
 import { Link } from "react-router-dom";
 import LogoImg from "assets/images/logo.png";
+import Scroll, { useScroll } from "components/common/Scroll";
 
 function HomeHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { scrollActive } = useScroll();
 
   return (
-    <Header>
+    <Header scrollActive={scrollActive}>
       <B.Container>
         <Nav menuOpen={menuOpen}>
           <Logo src={LogoImg} alt="logo" />

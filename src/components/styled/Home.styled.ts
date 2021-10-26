@@ -4,7 +4,7 @@ import heroBack from "assets/images/hero_background.jpg";
 import OfferImg from "assets/images/the_paradise_bg.jpg";
 
 //# header ////////////////////////////////////
-export const Header = styled(B.Header)`
+export const Header = styled(B.Header)<{ scrollActive: boolean }>`
   width: 100%;
   height: 6rem;
   display: flex;
@@ -12,7 +12,9 @@ export const Header = styled(B.Header)`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(142, 68, 173, 0.85);
+  transition: background-color 0.5s;
+  background-color: ${({ scrollActive, theme }) =>
+    scrollActive ? theme.colors.purple : "rgba(142, 68, 173, 0.85)"};
   z-index: 1000;
 `;
 
@@ -401,7 +403,7 @@ export const FooterSocial = styled.div`
     margin-top: 2rem;
   }
 
-  & .social-media > .sm-link {
+  & .social-media > a {
     width: 4rem;
     height: 4rem;
     border: 2px solid ${({ theme }) => theme.colors.pointColorYello};
@@ -421,4 +423,4 @@ export const FooterSocial = styled.div`
 `;
 
 //@ media
-export const Media = styled.div``;
+export const HomeMedia = styled.div``;
