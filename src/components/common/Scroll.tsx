@@ -64,13 +64,14 @@ const ScollContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
     cursor: pointer;
-    padding: 2rem;
+    padding: 1.8rem 2rem;
     border: 2px solid ${({ theme }) => theme.colors.pointColorYello};
-    border-radius: 50%;
+    border-radius: 10rem;
     color: ${({ theme }) => theme.colors.indigo};
     &:first-of-type {
       margin-right: 1rem;
     }
+    font-size: 1.5rem;
   }
 `;
 

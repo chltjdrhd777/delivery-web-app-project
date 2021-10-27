@@ -10,7 +10,7 @@ function HomeHeader() {
   const { scrollActive } = useScroll();
 
   return (
-    <Header scrollActive={scrollActive}>
+    <Header scrollActive={scrollActive} className={scrollActive ? "scrollActive" : ""}>
       <B.Container>
         <Nav menuOpen={menuOpen}>
           <Logo src={LogoImg} alt="logo" />

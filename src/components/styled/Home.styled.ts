@@ -12,10 +12,16 @@ export const Header = styled(B.Header)<{ scrollActive: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
-  transition: background-color 0.5s;
-  background-color: ${({ scrollActive, theme }) =>
-    scrollActive ? theme.colors.purple : "rgba(142, 68, 173, 0.85)"};
+  transition: background-color 0.5s, height 0.5s;
+  background-color: rgba(142, 68, 173, 0.85);
   z-index: 1000;
+
+  &.scrollActive {
+    background-color: ${({ theme }) => theme.colors.purple};
+  }
+
+  /* background-color: ${({ scrollActive, theme }) =>
+    scrollActive ? theme.colors.purple : "rgba(142, 68, 173, 0.85)"}; */
 `;
 
 export const Nav = styled(B.Nav)<{ menuOpen?: boolean }>`
@@ -56,7 +62,7 @@ export const NavList = styled(B.Ul)<{ menuOpen?: boolean }>`
   justify-content: center;
   flex-direction: column;
   z-index: 1400;
-  opacity: ${({ menuOpen }) => (menuOpen ? 100 : 0)};
+  opacity: ${({ menuOpen }) => (menuOpen ? 1 : 0)};
   transform: scale(${({ menuOpen }) => (menuOpen ? 1 : 0)});
   transition: opacity 0.5s;
 
@@ -423,4 +429,157 @@ export const FooterSocial = styled.div`
 `;
 
 //@ media
-export const HomeMedia = styled.div``;
+export const HomeMedia = styled.div`
+  //# 768px ~
+  ${({ theme }) => theme.mediaQuery.tablet} {
+    //% Header
+    ${Header} {
+      height: 8rem;
+
+      &.scrollActive {
+        height: 5rem;
+      }
+    }
+
+    //% Sections
+    //@ Hero //
+    ${MainHeading} {
+      .title {
+        font-size: 8rem;
+      }
+    }
+
+    //@ Contact //
+    ${ContactContent} {
+      .contactImg-wrap {
+        display: block;
+        flex: 0.45;
+        margin-right: 2rem;
+        & img {
+          width: 100%;
+        }
+      }
+
+      ${ContactForm} {
+        flex: 0.5;
+        align-self: flex-start;
+
+        & .input-group-wrap {
+          display: flex;
+        }
+
+        & .input-group-wrap .input-group {
+          width: 50%;
+        }
+
+        & .input-group-wrap .input-group:first-child {
+          margin-right: 2rem;
+        }
+      }
+    }
+
+    //@ footer //
+    ${FooterContent} {
+      display: flex;
+    }
+
+    ${FooterBrand} {
+      margin-bottom: 0;
+      flex: 0.6;
+    }
+
+    ${FooterSocial} {
+      flex: 0.4;
+      & .social-media {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  ${({ theme }) => theme.mediaQuery.desktop} {
+    ${B.Container} {
+      padding: 10rem 1rem;
+    }
+
+    //% Header
+    ${HambergerMenu} {
+      display: none;
+    }
+
+    ${NavList} {
+      position: initial;
+      width: initial;
+      height: initial;
+      background-color: transparent;
+      flex-direction: row;
+      justify-content: initial;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    ${NavList} .nav-item a {
+      font-size: 1.5rem;
+      font-weight: normal;
+      transition: color 0.5s;
+      &:hover {
+        color: ${({ theme }) => theme.colors.indigo};
+      }
+    }
+
+    //% Sections
+    //@ Hero //
+    ${MainHeading} {
+      .title {
+        font-size: 12rem;
+        font-weight: bold;
+      }
+      .subtitle {
+        font-size: 3.5rem;
+      }
+    }
+
+    //@ Booking //
+    ${Form} {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ${Form} .input-group {
+      min-width: 10rem;
+    }
+
+    ${Form} .form-button {
+      margin-top: 0;
+      height: 5rem;
+    }
+
+    //@ Rooms //
+    ${RoomsGrid} {
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+      grid-gap: 8rem;
+    }
+
+    ${RoomsGrid} .featured-rooms {
+      display: flex;
+    }
+
+    ${RoomsGrid} .featured-rooms .room-info-wrap {
+      margin-left: 2rem;
+    }
+
+    ${RoomsGrid} .featured-rooms .room-info-wrap p {
+      margin: 1rem 0 3rem;
+    }
+  }
+
+  ${({ theme }) => theme.mediaQuery.tabletL} {
+    //@ Booking
+    ${Form} {
+      justify-content: center;
+      & * {
+        margin-right: 2rem;
+      }
+    }
+  }
+`;

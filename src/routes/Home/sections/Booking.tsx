@@ -32,7 +32,9 @@ function HomeBooking() {
               <option value="0">4</option>
               <option value="0">5</option>
             </select>
+          </div>
 
+          <div className="input-group">
             <label htmlFor="children">Children</label>
             <select id="children">
               <option value="0">0</option>
@@ -44,7 +46,7 @@ function HomeBooking() {
             </select>
           </div>
 
-          <B.Button className="form-btn btn-purple">
+          <B.Button className="form-btn btn-purple form-button">
             search
             <span className="dots">
               <i className="fas fa-ellipsis-h"></i>

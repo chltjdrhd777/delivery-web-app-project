@@ -83,9 +83,10 @@ export const deviceSizeUnits = {
 } as const;
 
 export const mediaQuery = {
-  desktop: renderMediaQuery("screen", deviceSizeUnits.desktop),
-  tablet: renderMediaQuery("screen", deviceSizeUnits.tablet),
   phone: renderMediaQuery("screen", deviceSizeUnits.mobileL),
+  tablet: renderMediaQuery("screen", deviceSizeUnits.tablet),
+  desktop: renderMediaQuery("screen", deviceSizeUnits.desktop),
+  tabletL: renderMediaQuery("screen", deviceSizeUnits.tabletL),
 } as const;
 
 //@ CSS PART END ///////////////////////////////////////////////////////////////
