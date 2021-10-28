@@ -5,7 +5,7 @@ export const B = {
   Container: styled.div`
     width: 100%;
     max-width: 100%;
-    padding: 3rem;
+    padding: 1.7rem;
   `,
   Header: styled.header``,
   Main: styled.main``,
@@ -15,58 +15,20 @@ export const B = {
   Ul: styled.ul``,
   Nav: styled.nav``,
   Button: styled.button`
-    /* base */
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 0.7rem 3.5rem;
     border: none;
-    background-color: ${({ theme }) => theme.colors.mainColor};
-    border-radius: 10rem;
-    line-height: 1;
+    border-radius: 5rem;
+    background-color: transparent;
     cursor: pointer;
+    padding: 2rem;
+    transition: color 0.5s;
+    font-weight: bold;
 
-    /* reuse */
-    &.gradient {
-      background-image: ${({ theme }) => theme.colors.gradient};
-      display: inline-flex;
-      align-items: center;
-
-      .dots {
-        font-size: 2.4rem;
-        margin-left: 0.5rem;
-        opacity: 0.75;
-      }
-
-      &:hover {
-        background-image: ${({ theme }) => theme.colors.gradientAlt};
-      }
-    }
-
-    &.form-btn {
-      margin-top: 2.5rem;
-      cursor: pointer;
-    }
-
-    &.btn-purple {
-      background-color: ${({ theme }) => theme.colors.purple};
-      &:hover {
-        background-color: ${({ theme }) => theme.colors.pointColorYello};
-        color: ${({ theme }) => theme.colors.indigo};
-      }
-    }
-
-    &.room-btn {
-      background-color: transparent;
-      color: ${({ theme }) => theme.colors.grayFour};
-      padding: 0;
-      transition: color 0.5s;
-      &:hover {
-        color: ${({ theme }) => theme.colors.pointColorYello};
-      }
+    &.active {
+      background-color: black;
+      color: white;
     }
   `,
+
   Form: styled.form``,
   Grid: styled.div`
     display: grid;
